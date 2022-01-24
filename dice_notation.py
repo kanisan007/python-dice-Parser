@@ -353,7 +353,7 @@ class StmtNode(Node):
             node = ExprNode(self.env)
             return { 'type': self.type, 'expression': node.parse() }
         else:
-            raise SyntaxError('お前の入力はうんこだよ')
+            raise SyntaxError('入力が間違っています')
 
 class Parser:
     def __init__(self):
@@ -370,14 +370,4 @@ class Parser:
             node = StmtNode(env)
             return node.parse()
         else:
-            raise SyntaxError('やーいうんこうんこ')
-
-# unk = Tokenizer()
-
-# kie = Environment(unk.tokenize(''))
-
-# ahe = TermNode(kie)
-# print(ahe.parse())
-
-kie = Parser()
-print(kie.parse('1d10+2*3+DB'))
+            raise SyntaxError('入力が間違っています')
